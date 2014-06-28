@@ -10,7 +10,7 @@ return array(
 
      'router' => array(
          'routes' => array(
-             'album' => array(
+             'book' => array(
                  'type'    => 'segment',
                  'options' => array(
                      'route'    => '/book[/][:action][/:id]',
