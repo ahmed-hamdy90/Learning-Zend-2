@@ -1,1 +1,28 @@
-in index.phtml
+<?php 
+    //var_dump($this->title);
+    $this->headTitle($this->title);
+?>
+
+<h1>My Book List</h1>
+
+<table class="table">
+    <tr>
+        <td>Title</td>
+        <td>Author</td>
+        <td></td>
+    </tr>
+    <?php foreach($this->books as $book): ?>
+        <tr>
+            <td><?= $this->escapeHtml($book->title) ?></td>
+            <td><?= $this->escapeHtml($book->author) ?></td>
+            <td>
+                <a href="<?= $this->url('book',array("action" => "edit","id" => $book->id )) ?>">Edit</a>
+                <a href="<?= $this->url('book',array("action" => "delete","id" => $book->id )) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach;?>
+</table>
+<br/>
+<center>
+    <a href="<?= $this->url('book',array("action" => "add")) ?>">Add new book</a>
+</center>
