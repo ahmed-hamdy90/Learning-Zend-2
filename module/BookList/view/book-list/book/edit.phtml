@@ -1,1 +1,21 @@
-in edit.phtml
+<?php 
+    $this->headTitle($this->title);
+?>
+<h1><?= $this->escapeHtml($this->title); ?></h1>
+<br/>
+<?php 
+$this->form->setAttribute('action',$this->url('book',array(
+    'action' => 'edit',
+    'id' => $this->id,
+    ) ) );
+$this->form->prepare();
+
+echo $this->form()->openTag($this->form);
+echo $this->formHidden($this->form->get('id'));
+echo $this->formLabel($this->form->get('title')),"<br/>";
+echo $this->formInput($this->form->get('title')),"<br/>";
+echo $this->formLabel($this->form->get('author')),"<br/>";
+echo $this->formInput($this->form->get('author')),"<br/>","<br/>";
+echo $this->formSubmit($this->form->get('submit')),"<br/>";
+echo $this->form()->closeTag();
+

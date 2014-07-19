@@ -30,7 +30,7 @@ Class BookForm extends Form{
             "name" => "title",
             "type" => "Text",
             "options" => array(
-                "label" => "Title"
+                "label" => "Title :"
             )
         ));
         
@@ -39,7 +39,7 @@ Class BookForm extends Form{
             "name" => "author",
             "type" => "Text",
             "options" => array(
-                "label" => "Author"
+                "label" => "Author :"
             )
         ));
         

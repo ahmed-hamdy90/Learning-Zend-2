@@ -1,1 +1,19 @@
-in delete.phtml
+<?php 
+    $this->headTitle($this->title);
+?>
+<h1><?= $this->escapeHtml($this->title); ?></h1>
+<br/>
+<p>Are you sure that you want to delete "<?= $this->titleOfBook ?>" book 
+    which written by "<?= $this->authorOfBook ?>" ?</p>
+<?php 
+$this->deleteForm->setAttribute('action',$this->url('book',array(
+    'action' => 'delete',
+    'id' => $this->id,
+    ) ) );
+$this->deleteForm->prepare();
+
+echo $this->form()->openTag($this->deleteForm);
+echo $this->formHidden($this->deleteForm->get('id'));
+echo $this->formSubmit($this->deleteForm->get('submit-yes'));
+echo $this->formSubmit($this->deleteForm->get('submit-no'));
+echo $this->form()->closeTag();

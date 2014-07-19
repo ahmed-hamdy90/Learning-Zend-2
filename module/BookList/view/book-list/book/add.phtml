@@ -1,1 +1,29 @@
-in add.phtml
+<?php 
+    $this->headTitle($this->title);
+?>
+<h1><?= $this->escapeHtml($this->title); ?></h1>
+<br/>
+<?php 
+// set action for form using url method 
+// take two paramters [name of controller , neme of action in controller] 
+$this->form->setAttribute('action',$this->url('book',array('action' => 'add') ) );
+// set method for form  default method is POST 
+//$this->form->setAttribute('method',"GET");
+$this->form->prepare();
+
+// to output form with specify output for every element in form alone 
+echo $this->form()->openTag($this->form);
+echo $this->formHidden($this->form->get('id'));
+// output label and input fields every html tag alone using formLabel and formInput
+echo $this->formLabel($this->form->get('title')),"<br/>";
+echo $this->formInput($this->form->get('title')),"<br/>";
+echo $this->formLabel($this->form->get('author')),"<br/>";
+echo $this->formInput($this->form->get('author')),"<br/>","<br/>";
+// or output label and input fields every html tag together with formRow    
+//echo $this->formRow($this->form->get('title')),"<br/>";
+//echo $this->formRow($this->form->get('author')),"<br/>";
+echo $this->formSubmit($this->form->get('submit')),"<br/>";
+echo $this->form()->closeTag();
+
+// or output form as block without specify output for every element in form alone  
+//echo $this->formCollection($this->form);
