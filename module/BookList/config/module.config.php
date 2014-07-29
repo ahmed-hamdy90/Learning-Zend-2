@@ -39,7 +39,7 @@ return array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => array(
-                  __DIR__ . '/../src/BookList/Entity'  
+                  __DIR__.'/../src/BookList/Entity'  
                 ),
             ),            
             'orm_default' => array(
