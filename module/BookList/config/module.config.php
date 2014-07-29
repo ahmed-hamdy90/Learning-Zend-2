@@ -32,5 +32,22 @@ return array(
              'book' => __DIR__ . '/../view',
          ),
      ),
+    // doctrine configration 
+    'doctrine' => array(
+        'driver' => array(
+            'book_list_entities' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(
+                  __DIR__ . '/../src/BookList/Entity'  
+                ),
+            ),            
+            'orm_default' => array(
+                'drivers' => array(
+                    'BookList\Entity' => 'book_list_entities' 
+                )
+            ),
+        ),
+    ),
     
 );
