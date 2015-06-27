@@ -12,17 +12,19 @@ use BookList\Form\DeleteBookForm;
  *
  * @author ahmedhamdy <ahmedhmady20@gmail.com>
  */
-class BookController extends AbstractActionController {
+class BookController extends AbstractActionController
+{
     
-    private $title ;
+    private $_title ;
     /**
      * index action to display all books
      * 
      * @return ViewModel view object   
      */
-    public function indexAction() {
+    public function indexAction()
+    {
 
-        $this->title = "My Books";
+        $this->_title = "My Books";
         return new ViewModel(array(
             "title" => $this->title,
             "books" => array()
@@ -34,9 +36,10 @@ class BookController extends AbstractActionController {
      * 
      * @return ViewModel view object 
      */
-    public function addAction() {
+    public function addAction()
+    {
 
-        $this->title = "add new Book";
+        $this->_title = "add new Book";
         $form = new BookForm();
             // next line will get field in Form and change value for submit button to Add   
             //$form->get("submit")->setValue("Add");
@@ -50,7 +53,7 @@ class BookController extends AbstractActionController {
         }
         
         return new ViewModel(array(
-            "title" => $this->title,
+            "title" => $this->_title,
             "form"  => $form,
         ));
     }
@@ -60,9 +63,10 @@ class BookController extends AbstractActionController {
      * 
      * @return ViewModel view object 
      */
-    public function editAction() {
+    public function editAction()
+    {
         
-        $this->title = "Edit Book";
+        $this->_title = "Edit Book";
         // get id value from route and set default value is missed 0 
         $id = $this->params()->fromRoute("id",0);
         if(!$id || $id == 0){
@@ -82,7 +86,7 @@ class BookController extends AbstractActionController {
         }
         
         return new ViewModel(array(
-            'title' => $this->title,
+            'title' => $this->_title,
             'id' => $id,
             'form' => $form,
         ));
@@ -93,9 +97,10 @@ class BookController extends AbstractActionController {
      * 
      * @return ViewModel view object 
      */
-    public function deleteAction() {
+    public function deleteAction()
+    {
 
-        $this->title = "Delete Book"; 
+        $this->_title = "Delete Book"; 
         $id = $this->params()->fromRoute('id', 0);
         if(!$id || $id == 0){
             
@@ -121,7 +126,7 @@ class BookController extends AbstractActionController {
         }
         
         return new ViewModel(array(
-            "title" => $this->title, 
+            "title" => $this->_title, 
             "id" => $id,
             "titleOfBook" => $titleOfBook,
             "authorOfBook" => $authorOfBook,
@@ -131,4 +136,3 @@ class BookController extends AbstractActionController {
     
 }
 
-?>

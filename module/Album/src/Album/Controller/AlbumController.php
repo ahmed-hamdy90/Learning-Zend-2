@@ -53,6 +53,5 @@ class AlbumController extends AbstractActionController
         return new ViewModel();
     }
 
-
 }
 

@@ -9,13 +9,15 @@ use Zend\Form\Form;
  * 
  * @author ahmed hamdy <ahmedhamdy20@gmail.com>
  */
-Class BookForm extends Form{
+Class BookForm extends Form
+{
     
     /**
      * Book Form Constructor 
      * @param string $name
      */    
-    public function __construct($name = null) {
+    public function __construct($name = null)
+    {
         
         parent::__construct("book");
         
@@ -53,4 +55,5 @@ Class BookForm extends Form{
             )
         ));
     }
+    
 }

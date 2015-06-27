@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityRepository;
  *
  * @author ahmed hamdy <ahmedhamdy20@gmail.com>
  */
-class BookRepository extends EntityRepository{
+class BookRepository extends EntityRepository
+{
     
 }

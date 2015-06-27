@@ -11,7 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass = "BookRepository")
  * @author ahmed hamdy <ahmedhamdy20@gmail.com>
  */
-class Book {
+class Book
+{
 
     /**
      * @var integer
@@ -20,21 +21,21 @@ class Book {
      * @ORM\Column(name="id", type="integer")  
      * @ORM\GeneratedValue(strategy="AUTO") 
      */
-    private  $id;
+    private  $_id;
 
     /**
      * @var string
      * 
      * @ORM\Column(name="title", type="string", length = 255, nullable=true)  
      */    
-    private $title;
+    private $_title;
 
     /**
      * @var string
      * 
      * @ORM\Column(name="author", type="string", length = 255, nullable=true)  
      */    
-    private $author;
+    private $_author;
     
 
     /**
@@ -44,7 +45,7 @@ class Book {
      */
     public function getId(){
         
-        return $this->id;
+        return $this->_id;
     }
 
     /**
@@ -55,7 +56,7 @@ class Book {
      */
     public function setTitle($title){
         
-        $this->title = $title;
+        $this->_title = $title;
 
         return $this;
     }
@@ -67,7 +68,7 @@ class Book {
      */
     public function getTitle(){
         
-        return $this->title;
+        return $this->_title;
     }
 
     /**
@@ -78,7 +79,7 @@ class Book {
      */
     public function setAuthor($author){
         
-        $this->author = $author;
+        $this->_author = $author;
 
         return $this;
     }
@@ -90,6 +91,6 @@ class Book {
      */
     public function getAuthor(){
         
-        return $this->author;
+        return $this->_author;
     }
 }
