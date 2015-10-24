@@ -1,12 +1,11 @@
 
-drop database if exists  learning_zend;
+CREATE DATABASE IF NOT EXISTS learning_zend_2_with_orm;
 
-create database learning_zend;
+USE learning_zend_2_with_orm;
 
-create table if not exists book(
-    `id` int NOT NULL AUTO_INCREMENT,
-    `title` varcahr(225) NOT NULL,
-    `author` varcahr(225) NOT NULL,
-    primary key(id)
+CREATE TABLE IF NOT EXISTS book (
+   `id`     int NOT NULL AUTO_INCREMENT,
+   `title`  varchar(225) NOT NULL,
+   `author` varchar(225) NOT NULL,
+   PRIMARY KEY (id)
 );
-
