@@ -4,3 +4,4 @@ vendor/
 config/application.config.old
 config/autoload/.gitignore
 config/autoload/README.md
+.idea/
