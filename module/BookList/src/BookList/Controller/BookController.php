@@ -1,5 +1,4 @@
 <?php
-
 namespace BookList\Controller;
  
 use Zend\Mvc\Controller\AbstractActionController;
@@ -14,8 +13,8 @@ use BookList\Form\DeleteBookForm;
  */
 class BookController extends AbstractActionController
 {
-    
-    private $_title ;
+    private $title;
+
     /**
      * index action to display all books
      * 
@@ -23,8 +22,7 @@ class BookController extends AbstractActionController
      */
     public function indexAction()
     {
-
-        $this->_title = "My Books";
+        $this->title = "My Books";
         return new ViewModel(array(
             "title" => $this->title,
             "books" => array()
@@ -38,8 +36,7 @@ class BookController extends AbstractActionController
      */
     public function addAction()
     {
-
-        $this->_title = "add new Book";
+        $this->title = "add new Book";
         $form = new BookForm();
             // next line will get field in Form and change value for submit button to Add   
             //$form->get("submit")->setValue("Add");
@@ -53,7 +50,7 @@ class BookController extends AbstractActionController
         }
         
         return new ViewModel(array(
-            "title" => $this->_title,
+            "title" => $this->title,
             "form"  => $form,
         ));
     }
@@ -65,8 +62,7 @@ class BookController extends AbstractActionController
      */
     public function editAction()
     {
-        
-        $this->_title = "Edit Book";
+        $this->title = "Edit Book";
         // get id value from route and set default value is missed 0 
         $id = $this->params()->fromRoute("id",0);
         if(!$id || $id == 0){
@@ -86,7 +82,7 @@ class BookController extends AbstractActionController
         }
         
         return new ViewModel(array(
-            'title' => $this->_title,
+            'title' => $this->title,
             'id' => $id,
             'form' => $form,
         ));
@@ -99,15 +95,14 @@ class BookController extends AbstractActionController
      */
     public function deleteAction()
     {
-
-        $this->_title = "Delete Book"; 
+        $this->title = "Delete Book";
         $id = $this->params()->fromRoute('id', 0);
         if(!$id || $id == 0){
             
             return $this->notFoundAction();
         }
         
-        $titleOfBook = "learnig Zend 2";
+        $titleOfBook = "learning Zend 2";
         $authorOfBook = "no one";
                 
         $deleteForm = new DeleteBookForm();
@@ -126,13 +121,12 @@ class BookController extends AbstractActionController
         }
         
         return new ViewModel(array(
-            "title" => $this->_title, 
+            "title" => $this->title,
             "id" => $id,
             "titleOfBook" => $titleOfBook,
             "authorOfBook" => $authorOfBook,
             "deleteForm" => $deleteForm,
         ));
     }
-    
 }
 

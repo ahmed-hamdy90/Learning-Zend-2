@@ -1,5 +1,4 @@
 <?php
-
 namespace BookList\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -13,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Book
 {
-
     /**
      * @var integer
      * 
@@ -21,31 +19,30 @@ class Book
      * @ORM\Column(name="id", type="integer")  
      * @ORM\GeneratedValue(strategy="AUTO") 
      */
-    private  $_id;
+    private  $id;
 
     /**
      * @var string
      * 
      * @ORM\Column(name="title", type="string", length = 255, nullable=true)  
      */    
-    private $_title;
+    private $title;
 
     /**
      * @var string
      * 
      * @ORM\Column(name="author", type="string", length = 255, nullable=true)  
      */    
-    private $_author;
-    
+    private $author;
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId(){
-        
-        return $this->_id;
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -54,9 +51,9 @@ class Book
      * @param string $title
      * @return Book
      */
-    public function setTitle($title){
-        
-        $this->_title = $title;
+    public function setTitle($title)
+    {
+        $this->title = $title;
 
         return $this;
     }
@@ -66,9 +63,9 @@ class Book
      *
      * @return string 
      */
-    public function getTitle(){
-        
-        return $this->_title;
+    public function getTitle()
+    {
+        return $this->title;
     }
 
     /**
@@ -77,9 +74,9 @@ class Book
      * @param string $author
      * @return Book
      */
-    public function setAuthor($author){
-        
-        $this->_author = $author;
+    public function setAuthor($author)
+    {
+        $this->author = $author;
 
         return $this;
     }
@@ -89,8 +86,8 @@ class Book
      *
      * @return string 
      */
-    public function getAuthor(){
-        
-        return $this->_author;
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace BookList\Form;
 
 use Zend\Form\Form;
@@ -11,14 +10,12 @@ use Zend\Form\Form;
  */
 Class DeleteBookForm extends Form
 {
-    
     /**
      * delete Form Constructor 
      * @param string $name
      */    
     public function __construct($name = null)
     {
-        
         parent::__construct("delete-book");
         
         $this->add(array(
@@ -42,5 +39,4 @@ Class DeleteBookForm extends Form
             )
         ));
     }
-    
 }

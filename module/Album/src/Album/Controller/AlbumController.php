@@ -1,5 +1,4 @@
 <?php
-
 namespace Album\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
@@ -12,7 +11,6 @@ use Zend\View\Model\ViewModel;
  */
 class AlbumController extends AbstractActionController
 {
-
     /**
      * index action to display all albums
      * 
@@ -52,6 +50,5 @@ class AlbumController extends AbstractActionController
     {
         return new ViewModel();
     }
-
 }
 

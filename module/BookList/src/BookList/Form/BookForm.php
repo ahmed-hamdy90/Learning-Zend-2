@@ -1,5 +1,4 @@
 <?php
-
 namespace BookList\Form;
 
 use Zend\Form\Form;
@@ -11,14 +10,12 @@ use Zend\Form\Form;
  */
 Class BookForm extends Form
 {
-    
     /**
      * Book Form Constructor 
      * @param string $name
      */    
     public function __construct($name = null)
     {
-        
         parent::__construct("book");
         
         // add id field as Hidden field
@@ -55,5 +52,4 @@ Class BookForm extends Form
             )
         ));
     }
-    
 }
